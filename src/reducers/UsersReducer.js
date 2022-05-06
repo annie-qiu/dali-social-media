@@ -9,10 +9,10 @@ const initialState = {
 
 const usersReducer = produce((draftState, action = {}) => {
   switch (action.type) {
-    // case ActionTypes.FETCH_USER:
-    //   // eslint-disable-next-line prefer-destructuring
-    //   draftState.current = action.payload;
-    //   break;
+    case ActionTypes.FETCH_USER:
+      // eslint-disable-next-line prefer-destructuring
+      draftState.current = action.payload;
+      break;
     case ActionTypes.FETCH_USERS:
       // eslint-disable-next-line prefer-destructuring
       draftState.all = action.payload;
