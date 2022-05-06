@@ -1,19 +1,20 @@
-// keys for actiontypes
+// import axios from 'axios';
+
+const JSON = 'public/data.json';
+
 export const ActionTypes = {
-  INCREMENT: 'INCREMENT',
-  DECREMENT: 'DECREMENT',
+  FETCH_USERS: 'FETCH_USERS',
 };
 
-export function increment() {
-  return {
-    type: ActionTypes.INCREMENT,
-    payload: null,
-  };
-}
-
-export function decrement() {
-  return {
-    type: ActionTypes.DECREMENT,
-    payload: null,
+export function fetchUsers() {
+  return (dispatch) => {
+    fetch(JSON)
+      .then((response) => {
+        console.log('response', response.json());
+        dispatch({ type: ActionTypes.FETCH_USERS, payload: response.data });
+      })
+      .catch((error) => {
+        dispatch({ type: ActionTypes.ERROR_SET, error });
+      });
   };
 }
