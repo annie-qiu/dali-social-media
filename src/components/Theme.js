@@ -2,7 +2,7 @@ import { extendTheme } from '@chakra-ui/react';
 
 const Theme = extendTheme({
   fonts: {
-    heading: 'neue-haas-unica, sans-serif',
+    heading: 'Dosis, sans-serif',
     body: 'neue-haas-unica, sans-serif',
     button: 'neue-haas-unica, sans-serif',
     tag: 'neue-haas-unica, sans-serif',

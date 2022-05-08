@@ -4,7 +4,7 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
-  DarkMode, IconButton, Flex, Image, Text,
+  DarkMode, IconButton, Flex, Image, Text, Heading,
 } from '@chakra-ui/react';
 import { IoChevronBackOutline } from 'react-icons/io5';
 import { connect } from 'react-redux';
@@ -16,7 +16,7 @@ const UserView = (props) => {
 
   useEffect(() => {
     props.fetchUser(userName);
-  });
+  }, []);
 
   const handleBack = () => {
     navigate('/');
@@ -28,8 +28,8 @@ const UserView = (props) => {
     <Flex
       justify="center"
       mb={12}
-      ml={10}
-      mr={10}
+      ml="auto"
+      mr="auto"
       flexDir={['column', 'column', 'row']}
     >
       <DarkMode>
@@ -46,7 +46,7 @@ const UserView = (props) => {
       <Flex
         borderWidth="1px"
         borderRadius="lg"
-        w="1000px"
+        w="900px"
         p={10}
         gridGap={10}
       >
@@ -60,14 +60,13 @@ const UserView = (props) => {
         </Flex>
         <Flex flexDir="column" gridGap={6} w="500px">
           <Flex flexDir="column">
-            <Text fontSize="3xl"
+            <Heading fontSize="4xl"
               fontWeight={500}
               color="#E0E2E4"
             >{props.currentUser.name}
-            </Text>
+            </Heading>
             <Flex gridGap={1}>
-              <Text fontSize="lg" color="#E0E2E4">{props.currentUser.role}</Text>
-              <Text fontSize="lg" color="#E0E2E4">{props.currentUser.year}</Text>
+              <Text fontSize="lg" color="#E0E2E4">{props.currentUser.role} {props.currentUser.year}</Text>
             </Flex>
           </Flex>
 

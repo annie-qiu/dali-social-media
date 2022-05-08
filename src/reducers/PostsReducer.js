@@ -7,14 +7,13 @@ const initialState = {
   current: {},
 };
 
-const UsersReducer = produce((draftState, action = {}) => {
+const PostsReducer = produce((draftState, action = {}) => {
   switch (action.type) {
-    case ActionTypes.FETCH_USER:
-      console.log('fetch user payload', action.payload);
+    case ActionTypes.FETCH_POST:
       // eslint-disable-next-line prefer-destructuring
       draftState.current = action.payload;
       break;
-    case ActionTypes.FETCH_USERS:
+    case ActionTypes.FETCH_POSTS:
       // eslint-disable-next-line prefer-destructuring
       draftState.all = action.payload;
       break;
@@ -23,4 +22,4 @@ const UsersReducer = produce((draftState, action = {}) => {
   }
 }, initialState);
 
-export default UsersReducer;
+export default PostsReducer;
