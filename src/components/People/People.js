@@ -48,20 +48,24 @@ function People(props) {
   //   // setFilter(tag);
   // };
 
-  const users = props.users.map((user) => <UserCard user={user} />);
-  return (
-    <Flex flexDir="column" w="1000px">
-      <Heading fontWeight={400}>Members</Heading>
-      {/* <Search filter={handleFilter} /> */}
-      <Flex
-        wrap="wrap"
-        m={10}
-        justify="center"
-      >
-        {users}
+  if (props.users) {
+    const users = props.users.map((user) => <UserCard user={user} />);
+    return (
+      <Flex flexDir="column" w="1000px">
+        <Heading fontWeight={400}>Members</Heading>
+        {/* <Search filter={handleFilter} /> */}
+        <Flex
+          wrap="wrap"
+          m={10}
+          justify="center"
+        >
+          {users}
+        </Flex>
       </Flex>
-    </Flex>
-  );
+    );
+  } else {
+    return (<div>Loading</div>);
+  }
 }
 
 function mapStateToProps(state) {
