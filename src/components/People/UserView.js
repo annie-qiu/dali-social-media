@@ -19,7 +19,7 @@ const UserView = (props) => {
   }, []);
 
   const handleBack = () => {
-    navigate('/');
+    navigate('/people');
   };
 
   console.log(props.currentUser);
