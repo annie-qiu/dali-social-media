@@ -23,7 +23,7 @@ export function fetchUsers() {
 
 export function fetchUser(inputName) {
   return (dispatch) => {
-    axios.get('./data.json')
+    axios.get('https://raw.githubusercontent.com/dali-lab/dali-challenges/master/data/DALI_Data.json')
       .then((response) => {
         const currentUser = response.data.filter((user) => user.name === inputName);
         dispatch({ type: ActionTypes.FETCH_USER, payload: currentUser[0] });
