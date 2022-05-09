@@ -25,7 +25,7 @@ function SignUp() {
       navigate('/create-account');
     } catch (error) {
       setError(error.code);
-      console.log(error);
+      alert(error);
     }
   });
 

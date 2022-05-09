@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom';
 import { IoHeartOutline } from 'react-icons/io5';
 
 function PostCard(props) {
-  console.log('post card', props);
-
   return (
     <Flex
       borderWidth="1px"
@@ -24,9 +22,9 @@ function PostCard(props) {
       transition="0.2s ease all"
     >
       <Image src={props.post.imageURL} objectFit="contain" borderTopRadius="lg" />
-      <Flex p={6} flexDir="column" gridGap={1}>
+      <Flex p={6} flexDir="column" gridGap={2}>
         <Flex flexDir="row" gridGap={4} mb={4} alignItems="center">
-          <Image w="40px" h="40px" borderRadius="100%" src={props.post.author.photo} />
+          <Image w="40px" h="40px" borderRadius="100%" objectFit="cover" src={props.post.author.photo} />
           <Text>{props.post.author.name}</Text>
         </Flex>
         <Link to={props.id}>

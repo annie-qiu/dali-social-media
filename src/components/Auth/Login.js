@@ -34,7 +34,7 @@ function Login() {
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/posts');
     } catch (errorMessage) {
-      console.log(error);
+      alert(error);
     }
   });
 

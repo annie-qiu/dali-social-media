@@ -19,7 +19,7 @@ function Posts(props) {
     });
   }
 
-  if (Object.entries(props.posts).length !== 0) {
+  if (props.posts) {
     return (
       <Flex flexDir="column" maxW="800px">
         <Heading mb={4} fontWeight={400}>Feed</Heading>

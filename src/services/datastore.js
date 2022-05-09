@@ -39,6 +39,17 @@ export function fetchUser(userId, callback) {
 }
 
 export function updateProfile(userId, fields) {
-  console.log('child', userId);
   firebase.database().ref('users').child(userId).update(fields);
+}
+
+export function updateLikes(userId, postId, liked) {
+  firebase.database().ref(`postLikes/${userId}`).child(postId).set(liked);
+}
+
+export function fetchLikes(userId, callback) {
+  firebase.database().ref(`postLikes/${userId}`).on('value', (snapshot) => {
+    const likedPosts = snapshot.val();
+    console.log('liked posts', likedPosts);
+    callback(likedPosts);
+  });
 }

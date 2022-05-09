@@ -64,10 +64,14 @@ const Profile = (props) => {
 
           <Flex flexDir="column" gridGap={1}>
             <Text color="#E0E2E4" fontSize="lg" fontWeight={500}>About</Text>
-            <Flex gridGap={2}>
-              <Text fontSize="md">Major:</Text>
-              <Text fontSize="md" color="#E0E2E4">{props.currentUser.major}</Text>
-            </Flex>
+
+            {props.currentUser.major ? (
+              <Flex gridGap={2}>
+                <Text fontSize="md">Major:</Text>
+                <Text fontSize="md" color="#E0E2E4">{props.currentUser.major}</Text>
+              </Flex>
+            ) : ''}
+
             {props.currentUser.minor
               ? (
                 <Flex gridGap={2}>

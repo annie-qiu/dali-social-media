@@ -27,8 +27,8 @@ const CreatePost = (props) => {
       title,
       content,
       imageURL,
-      likes: 0,
       author: props.currentUser,
+      likes: 0,
     };
     console.log('post', post);
     props.createPost(post, navigate);

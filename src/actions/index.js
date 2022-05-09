@@ -76,11 +76,10 @@ export function createPost(post, navigate) {
   };
 }
 
-export function updatePost(postId, fields, navigate) {
+export function updatePost(postId, fields) {
   return (dispatch) => {
     const fetch = async () => {
       await db.updatePost(postId, fields);
-      navigate('/posts');
     };
     fetch();
   };
@@ -115,12 +114,5 @@ export function fetchPost(postId) {
       });
     };
     fetch();
-  };
-}
-
-export function likePost() {
-  return {
-    type: ActionTypes.LIKE_POST,
-    payload: null,
   };
 }
