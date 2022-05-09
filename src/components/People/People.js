@@ -48,7 +48,8 @@ function People(props) {
   //   // setFilter(tag);
   // };
 
-  if (props.users) {
+  if (Object.entries(props.users).length !== 0) {
+    console.log(props.users);
     const users = props.users.map((user) => <UserCard user={user} />);
     return (
       <Flex flexDir="column" w="1000px">
