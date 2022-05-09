@@ -50,6 +50,7 @@ function People(props) {
 
   if (Object.entries(props.users).length !== 0) {
     console.log(props.users);
+    // const users = Object.entries(props.posts).map((user) => <UserCard user={user[1]} />)
     const users = props.users.map((user) => <UserCard user={user} />);
     return (
       <Flex flexDir="column" w="1000px">

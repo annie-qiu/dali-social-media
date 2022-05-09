@@ -11,7 +11,7 @@ export const ActionTypes = {
 
 export function fetchUsers() {
   return (dispatch) => {
-    axios.get('./data.json')
+    axios.get('https://raw.githubusercontent.com/dali-lab/dali-challenges/master/data/DALI_Data.json')
       .then((response) => {
         dispatch({ type: ActionTypes.FETCH_USERS, payload: response.data });
       })

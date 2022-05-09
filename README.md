@@ -1,13 +1,7 @@
-# Title
+# DALI Net
 
-*description*
+DALI Development Application 22S
 
-[deployed url](http://url-if-deployed-here)
+[deployed url](dali-net.netlify.app)
 
-## What Worked Well
-
-## What Didn't
-
-## Extra Credit
-
-## Screenshots
+Note: The People page works locally but not on the deployed website, and I didn't have time to figure out why
